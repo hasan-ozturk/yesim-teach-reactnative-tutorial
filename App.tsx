@@ -1,15 +1,16 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import TabMain from './src/navigation/tab'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Root from './src/navigation/Root'
 
 const queryClient = new QueryClient()
 
 const App = () => {
+
   return <>
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        <TabMain />
+        <Root />
       </NavigationContainer>
     </QueryClientProvider>
   </>
