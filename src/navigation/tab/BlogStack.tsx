@@ -10,7 +10,15 @@ const BlogStack = () => {
   return <>
     <BlogStackScreens.Navigator>
       <BlogStackScreens.Screen name='Blog' component={BlogMainScreen} />
-      <BlogStackScreens.Screen name='BlogDetail' component={BlogDetailScreen} />
+      <BlogStackScreens.Screen
+        name='BlogDetail'
+        component={BlogDetailScreen}
+        options={
+          ({ route }: any) => ({ title: route.params?.title})
+
+        }
+
+      />
     </BlogStackScreens.Navigator>
   </>
 }

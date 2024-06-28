@@ -14,6 +14,7 @@ const BlogDetailScreen = ({ navigation, route }: any) => {
       return response.json()
     },
   })
+  
 
   return <>
     {
