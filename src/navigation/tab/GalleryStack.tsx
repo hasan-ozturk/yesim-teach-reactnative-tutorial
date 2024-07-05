@@ -9,7 +9,7 @@ const GalleryStack = () => {
     return (
         <GalleryStackScreens.Navigator>
             <GalleryStackScreens.Screen
-                name='GalleryStack'
+                name='GalleryStackScreen'
                 component={GalleryScreen}
             />
         </GalleryStackScreens.Navigator>

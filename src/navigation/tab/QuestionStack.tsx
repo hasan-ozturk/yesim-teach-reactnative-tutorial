@@ -5,6 +5,9 @@ import QuestionMainScreen from '../../screens/question'
 
 const QuestionStackScreens = createNativeStackNavigator()
 
+
+
+
 const QuestionStack = () => {
   return <>
     <QuestionStackScreens.Navigator>

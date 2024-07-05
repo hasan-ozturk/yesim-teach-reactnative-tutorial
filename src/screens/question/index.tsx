@@ -18,12 +18,12 @@ const QuestionMainScreen = () => {
       setrandomNumber(data)
     })
 
-    let data = DeviceInfo.getDeviceId();
-    setDeviceId(data)
+    // let data = DeviceInfo.getDeviceId();
+    // setDeviceId(data)
 
-    DeviceInfo.getPowerState().then((data) => {
-      console.log("Power state: ", data)
-    })
+    // DeviceInfo.getPowerState().then((data) => {
+    //   console.log("Power state: ", data)
+    // })
 
   }, [])
 

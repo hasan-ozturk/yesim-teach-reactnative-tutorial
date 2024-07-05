@@ -6,12 +6,22 @@ import ProfileStack from './ProfileStack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ContactStack from './ContactStack';
 import GalleryStack from './GalleryStack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 
 const Tab = createBottomTabNavigator();
+//  const Drawer = createDrawerNavigator();
+
 
 const TabMain = () => {
     return <>
+        {/* <Drawer.Navigator initialRouteName="Home">
+            <Drawer.Screen name="HelloScreen" component={HelloScreen} />
+            <Drawer.Screen name="AboutScreen" component={AboutScreen} />
+        </Drawer.Navigator> */}
+
         <Tab.Navigator>
             <Tab.Screen
                 name='QuestionStack'
@@ -26,28 +36,31 @@ const TabMain = () => {
                 component={BlogStack}
                 options={{
                     headerShown: false,
-                    tabBarIcon : () => (<MaterialCommunityIcons name="home" size={40} />)
+                    tabBarIcon: () => (<MaterialCommunityIcons name="home" size={20} />)
                 }}
             />
             <Tab.Screen
                 name='ProfileStack'
                 component={ProfileStack}
                 options={{
-                    headerShown: false
+                    headerShown: false,
+                    tabBarIcon: () => (<MaterialCommunityIcons name="home" size={20} />)
                 }}
             />
             <Tab.Screen
                 name='ContactStack'
                 component={ContactStack}
                 options={{
-                    headerShown: false
+                    headerShown: false,
+                    tabBarIcon: () => (<MaterialCommunityIcons name="home" size={20} />)
                 }}
             />
             <Tab.Screen
                 name='GalleryStack'
                 component={GalleryStack}
                 options={{
-                    headerShown: false
+                    headerShown: false,
+                    tabBarIcon: () => (<MaterialCommunityIcons name="home" size={20} />)
                 }}
             />
         </Tab.Navigator>
@@ -55,3 +68,19 @@ const TabMain = () => {
 }
 
 export default TabMain
+
+
+
+
+const HelloScreen = () => {
+    return <View>
+        <Text>Hello</Text>
+    </View>
+}
+
+
+const AboutScreen = () => {
+    return <View>
+        <Text>About</Text>
+    </View>
+}
