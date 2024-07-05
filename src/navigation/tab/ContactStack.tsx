@@ -13,7 +13,7 @@ const ContactStack = () => {
                 component={ContactListScreen}
             />
             <ContactStackScreens.Screen
-                name='Add Contact'
+                name='AddContact'
                 component={AddContactScreen}
             />
         </ContactStackScreens.Navigator>
