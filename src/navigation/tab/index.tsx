@@ -5,6 +5,7 @@ import QuestionStack from './QuestionStack';
 import ProfileStack from './ProfileStack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ContactStack from './ContactStack';
+import GalleryStack from './GalleryStack';
 
 
 const Tab = createBottomTabNavigator();
@@ -38,6 +39,13 @@ const TabMain = () => {
             <Tab.Screen
                 name='ContactStack'
                 component={ContactStack}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Tab.Screen
+                name='GalleryStack'
+                component={GalleryStack}
                 options={{
                     headerShown: false
                 }}
