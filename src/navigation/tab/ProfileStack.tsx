@@ -13,7 +13,7 @@ const ProfileStack = () => {
   return <>
     <ProfileStackScreens.Navigator>
       <ProfileStackScreens.Screen
-        name='ProfileEdit'
+        name='ProfileEditStack'
         component={ProfileEditStack}
         options={{
           headerShown: false
