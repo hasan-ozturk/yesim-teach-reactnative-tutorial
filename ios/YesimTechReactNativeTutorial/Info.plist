@@ -8,6 +8,8 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+  <key>NSContactsUsageDescription</key>
+  <string>ContactsList needs your permission to access your contacts</string>
 	<key>CFBundleDisplayName</key>
 	<string>YesimTechReactNativeTutorial</string>
 	<key>CFBundleExecutable</key>
