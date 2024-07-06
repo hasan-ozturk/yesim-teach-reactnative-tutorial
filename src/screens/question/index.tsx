@@ -10,6 +10,9 @@ const QuestionMainScreen = () => {
   const [randomNumber, setrandomNumber] = useState(0)
   const [deviceId, setDeviceId] = useState("")
   const [powerState, setpowerState] = useState({})
+  
+  const [name, setname] = useState("")
+  const [description, setdescription] = useState("")
 
 
   useEffect(() => {
