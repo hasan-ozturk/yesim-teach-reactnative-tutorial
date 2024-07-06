@@ -1,22 +1,53 @@
 import { View, Text, Image } from 'react-native'
 import React, { useRef, useState } from 'react'
-import { launchImageLibrary } from 'react-native-image-picker';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { Button } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
+import { Alert } from 'react-native';
 
 
 
 const GalleryScreen = () => {
 
-    // const [image, setimage] = useState('')
+    const [image, setimage] = useState('')
 
 
-    // const getPhotos = () => {
-    //     launchImageLibrary({ mediaType: 'photo' }, (response: any) => {
-    //         setimage(response.assets[0].uri);
-    //     });
+    const getPhotos = () => {
+        Alert.alert(
+            'Choose an option',
+            '',
+            [
+                {
+                    text: 'Camera',
+                    onPress: () => {
+                        launchCamera({ mediaType: 'photo' }, (response: any) => {
+                            if (response.didCancel) {
+                                return;
+                            }
+                            if(!response.assets){
+                                return;
+                            }
+                            setimage(response.assets[0].uri);
+                        });
+                    },
+                },
+                {
+                    text: 'Gallery',
+                    onPress: () => {
+                        launchImageLibrary({ mediaType: 'photo' }, (response: any) => {
+                            if (response.didCancel) {
+                                return;
+                            }
+                            setimage(response.assets[0].uri);
+                        });
+                    },
+                },
+            ],
+            { cancelable: true }
+        );
+    };
 
-    // }
+
 
 
     const lottieRef = useRef<LottieView>(null);
@@ -46,13 +77,13 @@ const GalleryScreen = () => {
             <Button onPress={resume}>Resume</Button>
             <Button onPress={reset}>Reset</Button>
 
-                <LottieView style={{height:200}} ref={lottieRef} source={require('../../palyaco.json')} />
- 
-            {/* <View>
+            <LottieView style={{ height: 200 }} ref={lottieRef} source={require('../../palyaco.json')} />
+
+            <View>
                 <Button onPress={getPhotos}>Get Photos from Gallery</Button>
                 <Text>GalleryScreen</Text>
                 <Image style={{ width: 200, height: 150 }} source={{ uri: image }} />
-            </View> */}
+            </View>
         </>
     )
 }

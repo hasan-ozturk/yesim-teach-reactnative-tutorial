@@ -1,17 +1,22 @@
-import { View, Text, Alert } from 'react-native'
+import { View, Text, Alert, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useFocusEffect } from '@react-navigation/native'
 import { Button, TextInput } from 'react-native-paper'
 import { storageHelper } from '../../utils/storageHelper'
 import DeviceInfo from 'react-native-device-info'
 import { YesimTechDbContext } from '../../models/YesimTechDbContext'
-import { QuestionModel } from '../../models/QuestionModel'
+import { CategoryModel, QuestionModel } from '../../models/QuestionModel'
+import { openRealm } from '../../navigation/tab'
+
+//application-0-bdvqjjq
 
 
-const { useRealm } = YesimTechDbContext
+
 
 
 const QuestionMainScreen = () => {
+
+  const { useRealm, useQuery } = YesimTechDbContext
 
   const [randomNumber, setrandomNumber] = useState(0)
   const [deviceId, setDeviceId] = useState("")
@@ -19,13 +24,24 @@ const QuestionMainScreen = () => {
 
   const [name, setname] = useState("")
   const [description, setdescription] = useState("")
+  const [status, setstatus] = useState(false)
+
+  const data = useQuery(
+    {
+      type: QuestionModel.schema.name,
+    }, [status]
+  )
+
+
+  console.log("Data: ", data)
+
 
   const realm = useRealm()
 
 
   Realm.open({}).then(realm => {
     console.log("Realm is located at: " + realm.path);
-});
+  });
 
   useEffect(() => {
 
@@ -58,22 +74,26 @@ const QuestionMainScreen = () => {
 
 
   const add = () => {
-    realm.write(() => {
-      var result = realm.create(QuestionModel.schema.name, {
-        name: name,
-        description: description
+    openRealm().then((realm: any) => {
+      console.log("Realm: ", realm)
+      realm.write(() => {
+        realm.create(CategoryModel.schema.name, {
+          name: name,
+          description: description
+        })
       })
-
-      // get result id from realm
-      console.log("Result id: ", result._objectKey())
+    }
+    )
+    .catch((error) => {
+      console.log("Errorrrr: ", error)
     })
-
 
 
   }
 
   return (
     <View>
+      <Button onPress={() => setstatus(!status)}>Refresh</Button>
       <Text>{randomNumber}</Text>
       <Text>QuestionMainScreen</Text>
       <Button onPress={() => setRandom()}>Set Data</Button>
@@ -85,6 +105,15 @@ const QuestionMainScreen = () => {
         <TextInput label="Description" value={description} onChangeText={(text) => setdescription(text)} />
         <Button onPress={add}>Save</Button>
       </View>
+
+      <FlatList
+        data={data}
+        renderItem={({ item }: any) => {
+          return <View>
+            <Text>{item.name} - {item.description}</Text>
+          </View>
+        }}
+      />
     </View>
   )
 }

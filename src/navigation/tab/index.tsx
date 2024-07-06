@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import BlogStack from './BlogStack';
 import QuestionStack from './QuestionStack';
@@ -9,13 +9,23 @@ import GalleryStack from './GalleryStack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { CategoryModel, QuestionModel } from '../../models/QuestionModel';
 
 
 const Tab = createBottomTabNavigator();
+
 //  const Drawer = createDrawerNavigator();
 
-
 const TabMain = () => {
+
+
+    useEffect(() => {
+        openRealm()
+
+    }, [])
+
+
+
     return <>
         {/* <Drawer.Navigator initialRouteName="Home">
             <Drawer.Screen name="HelloScreen" component={HelloScreen} />
@@ -64,6 +74,7 @@ const TabMain = () => {
                 }}
             />
         </Tab.Navigator>
+        <Text>Hello</Text>
     </>
 }
 
@@ -72,15 +83,28 @@ export default TabMain
 
 
 
-const HelloScreen = () => {
-    return <View>
-        <Text>Hello</Text>
-    </View>
-}
+export const openRealm = async () => {
+    const app = new Realm.App({ id: "deviceservice-qfclgfa" });
 
+    try {
+        const credentials = Realm.Credentials.anonymous();
+        const user = await app.logIn(credentials);
+    
+        const realm = await Realm.open({
+            schema: [CategoryModel.schema, QuestionModel.schema],
+            sync: {
+                user: user,
+                flexible: true,
+                initialSubscriptions: {
+                    update(subs, realm) {
+                      subs.add(realm.objects(CategoryModel));
+                    },
+                  },
+            },
+        })
+        return realm
+    } catch (error) {
+        console.log("Open realm error: ", error)
+    }
 
-const AboutScreen = () => {
-    return <View>
-        <Text>About</Text>
-    </View>
 }

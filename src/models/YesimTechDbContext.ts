@@ -1,6 +1,6 @@
 import { createRealmContext } from "@realm/react";
-import { QuestionModel } from "./QuestionModel";
+import { CategoryModel, QuestionModel } from "./QuestionModel";
 
 export const YesimTechDbContext = createRealmContext({
-    schema: [QuestionModel]
+    schema: [QuestionModel, CategoryModel]
 });
