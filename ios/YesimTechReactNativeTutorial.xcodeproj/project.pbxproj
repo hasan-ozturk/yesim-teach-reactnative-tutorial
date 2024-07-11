@@ -11,7 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1D78403A2C3F83D9003BDAFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D7840392C3F83D9003BDAFE /* GoogleService-Info.plist */; };
+		1D78403C2C3FEE46003BDAFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D78403B2C3FEE46003BDAFE /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		83211D40AF2F26986CF5E627 /* libPods-YesimTechReactNativeTutorial-YesimTechReactNativeTutorialTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5C290F500CAE07F9218C74 /* libPods-YesimTechReactNativeTutorial-YesimTechReactNativeTutorialTests.a */; };
 		BDD8BD9FCEC9F37F9CE4442E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0B747B640505BA87840F9EDC /* PrivacyInfo.xcprivacy */; };
@@ -42,7 +42,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YesimTechReactNativeTutorial/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = YesimTechReactNativeTutorial/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		1D08F1B12C2EA7F400E2CFFD /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		1D7840392C3F83D9003BDAFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D78403B2C3FEE46003BDAFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A5C290F500CAE07F9218C74 /* libPods-YesimTechReactNativeTutorial-YesimTechReactNativeTutorialTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YesimTechReactNativeTutorial-YesimTechReactNativeTutorialTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = YesimTechReactNativeTutorial/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A38E4414A4A6EF571E026AE3 /* libPods-YesimTechReactNativeTutorial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YesimTechReactNativeTutorial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 				1D08F1B02C2EA7BD00E2CFFD /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
-				1D7840392C3F83D9003BDAFE /* GoogleService-Info.plist */,
+				1D78403B2C3FEE46003BDAFE /* GoogleService-Info.plist */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -261,9 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				1D78403A2C3F83D9003BDAFE /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				BDD8BD9FCEC9F37F9CE4442E /* PrivacyInfo.xcprivacy in Resources */,
+				1D78403C2C3FEE46003BDAFE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5WJ6D6989G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = YesimTechReactNativeTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -527,6 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5WJ6D6989G;
 				INFOPLIST_FILE = YesimTechReactNativeTutorial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,10 +620,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -693,10 +692,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

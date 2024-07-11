@@ -8,6 +8,12 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Uygulama, kullanıcı fotoğraflarını düzenlemek için fotoğraf kitaplığına erişim gerektiriyor.</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Uygulama, kullanıcıya konum tabanlı hizmetler sağlamak için her zaman ve kullanımdayken konum bilgisine erişim gerektiriyor.</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Uygulama, kullanıcıya konum tabanlı hizmetler sağlamak için kullanımdayken konum bilgisine erişim gerektiriyor.</string>
   <key>NSContactsUsageDescription</key>
   <string>ContactsList needs your permission to access your contacts</string>
 	<key>CFBundleDisplayName</key>
