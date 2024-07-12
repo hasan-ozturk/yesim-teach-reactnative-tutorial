@@ -7,6 +7,7 @@ import DeviceInfo from 'react-native-device-info'
 import { YesimTechDbContext } from '../../models/YesimTechDbContext'
 import { CategoryModel, QuestionModel } from '../../models/QuestionModel'
 import { openRealm } from '../../navigation/tab'
+import messaging from '@react-native-firebase/messaging';
 
 //application-0-bdvqjjq
 
@@ -14,7 +15,22 @@ import { openRealm } from '../../navigation/tab'
 
 
 
-const QuestionMainScreen = () => {
+const QuestionMainScreen = ({navigation}: any) => {
+
+
+  useEffect(() => {
+    messaging().onNotificationOpenedApp(async (remoteMessage:any)  => {
+        console.log('Notification root :', remoteMessage);
+        const screen = remoteMessage.data.screen;
+        const itemId = remoteMessage.data.itemId;
+        console.log('screen', screen);
+
+        setTimeout(() => {
+            navigation.navigate(screen);
+        }, 3000);   
+   
+    });
+ },[])
 
   const { useRealm, useQuery } = YesimTechDbContext
 
@@ -93,6 +109,7 @@ const QuestionMainScreen = () => {
 
   return (
     <View>
+      <Button onPress={() => navigation.navigate("GalleryStack")}>GalleryStack</Button>
       <Button onPress={() => setstatus(!status)}>Refresh</Button>
       <Text>{randomNumber}</Text>
       <Text>QuestionMainScreen</Text>

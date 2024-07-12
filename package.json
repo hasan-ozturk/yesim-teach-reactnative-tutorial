@@ -23,7 +23,7 @@
     "@realm/react": "^0.8.0",
     "@tanstack/react-query": "^5.48.0",
     "json-server": "^1.0.0-beta.1",
-    "lottie-react-native": "^5.0.1",
+    "lottie-react-native": "5.1.6",
     "react": "18.2.0",
     "react-native": "0.74.2",
     "react-native-background-actions": "^4.0.1",

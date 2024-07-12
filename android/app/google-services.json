@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "272810453233",
+    "project_id": "yesimtechreactnativetutorial",
+    "storage_bucket": "yesimtechreactnativetutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272810453233:android:2354ed66e15907723fe150",
+        "android_client_info": {
+          "package_name": "com.yesimtechreactnativetutorial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq5ulkzmXmu6jlBNgtV2rLshYW_-GmWWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

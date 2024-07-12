@@ -67,6 +67,7 @@ export const checkApplicationNotificationPermission = async () => {
 //method was called to listener events from firebase for notification triger
 export function registerListenerWithFCM() {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
+        console.log('Notification ! :', remoteMessage);
         if (
             remoteMessage?.notification?.title &&
             remoteMessage?.notification?.body
@@ -92,12 +93,7 @@ export function registerListenerWithFCM() {
         }
     });
 
-    messaging().onNotificationOpenedApp(async remoteMessage => {
-     
-        // if (remoteMessage?.data?.clickAction) {
-        //   onNotificationClickActionHandling(remoteMessage.data.clickAction);
-        // }
-    });
+   
     // Check whether an initial notification is available
     messaging()
         .getInitialNotification()
@@ -113,6 +109,7 @@ export function registerListenerWithFCM() {
 //method was called to display notification
 async function onDisplayNotification(title:any, body:any, data:any) {
 
+    console.log('data', data)
     // Request permissions (required for iOS)
     await notifee.requestPermission();
     // Create a channel (required for Android)
