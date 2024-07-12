@@ -10,7 +10,9 @@ export const getFcmToken = async () => {
 
     try {
         token = await messaging().getToken();
+        console.log('token', token);
     } catch (error) {
+        console.log('error', error);
     }
     return token;
 };
